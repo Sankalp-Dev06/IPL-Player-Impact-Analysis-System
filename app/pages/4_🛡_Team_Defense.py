@@ -1,7 +1,10 @@
 import streamlit as st
+from theme import load_theme
 import pandas as pd
 import plotly.express as px
 from queries import load_team_defense
+
+load_theme()
 
 st.title("🛡 Team Defensive Strength")
 

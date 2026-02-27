@@ -1,7 +1,10 @@
 import streamlit as st
+from theme import load_theme
 import pandas as pd
 import plotly.express as px
 from queries import load_venue_intelligence
+
+load_theme()
 
 st.title("🏟 Venue Intelligence")
 

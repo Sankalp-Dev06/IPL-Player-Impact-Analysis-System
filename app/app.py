@@ -1,18 +1,6 @@
 import streamlit as st
-
-st.markdown("""
-<style>
-section[data-testid="stSidebar"] {
-    background-color: #111827;
-}
-section[data-testid="stSidebar"] h2 {
-    color: white;
-}
-section[data-testid="stSidebar"] .stMarkdown {
-    color: #9CA3AF;
-}
-</style>
-""", unsafe_allow_html=True)
+from theme import load_theme
+load_theme()
 
 st.set_page_config(
     page_title="IPL Impact Analytics",
