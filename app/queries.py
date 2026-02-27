@@ -1,26 +1,15 @@
 import pandas as pd
-from db import get_connection
 
 def load_player_overview():
-    conn = get_connection()
-    df = pd.read_sql("SELECT * FROM vw_Player_Overview_Season", conn)
-    conn.close()
-    return df
+    return pd.read_csv("data/player_overview.csv")
 
 def load_player_form():
-    conn = get_connection()
-    df = pd.read_sql("SELECT * FROM vw_Player_Form_Display", conn)
-    conn.close()
+    df = pd.read_csv("data/player_form.csv")
+    df["match_date"] = pd.to_datetime(df["match_date"])
     return df
 
 def load_venue_intelligence():
-    conn = get_connection()
-    df = pd.read_sql("SELECT * FROM vw_Venue_Intelligence", conn)
-    conn.close()
-    return df
+    return pd.read_csv("data/venue_intelligence.csv")
 
 def load_team_defense():
-    conn = get_connection()
-    df = pd.read_sql("SELECT * FROM vw_Team_Defensive_Strength", conn)
-    conn.close()
-    return df
+    return pd.read_csv("data/team_defense.csv")

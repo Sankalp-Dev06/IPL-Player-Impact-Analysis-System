@@ -1,0 +1,59 @@
+season,venue_id,venue_name,total_matches,avg_runs_per_match,avg_wickets_per_match,batting_to_wicket_ratio
+2018,1,Wankhede Stadium,9,317,12,26.416666666666
+2018,3,Eden Gardens,9,308,13,23.692307692307
+2018,4,Rajiv Gandhi International Stadium,7,290,12,24.166666666666
+2018,6,Sawai Mansingh Stadium,7,293,12,24.416666666666
+2018,7,M.Chinnaswamy Stadium,7,351,11,31.90909090909
+2018,8,Maharashtra Cricket Association Stadium,6,321,10,32.1
+2018,9,Arun Jaitley Stadium,7,326,11,29.636363636363
+2019,1,Wankhede Stadium,7,330,11,30.0
+2019,2,Punjab Cricket Association IS Bindra Stadium,7,326,10,32.6
+2019,3,Eden Gardens,7,365,9,40.555555555555
+2019,4,Rajiv Gandhi International Stadium,8,300,12,25.0
+2019,5,MA Chidambaram Stadium,8,258,11,23.454545454545
+2019,6,Sawai Mansingh Stadium,7,311,9,34.555555555555
+2019,7,M.Chinnaswamy Stadium,7,306,11,27.818181818181
+2019,9,Arun Jaitley Stadium,7,295,13,22.692307692307
+2020,12,Sheikh Zayed Stadium,22,301,10,30.1
+2020,13,Dubai International Cricket Stadium,26,308,12,25.666666666666
+2020,14,Sharjah Cricket Stadium,12,325,10,32.5
+2021,13,Dubai International Cricket Stadium,13,291,11,26.454545454545
+2021,14,Sharjah Cricket Stadium,10,252,12,21.0
+2021,15,"MA Chidambaram Stadium, Chepauk, Chennai",10,288,13,22.153846153846
+2021,16,"Wankhede Stadium, Mumbai",10,323,12,26.916666666666
+2021,17,"Narendra Modi Stadium, Ahmedabad",5,299,10,29.9
+2021,19,"Zayed Cricket Stadium, Abu Dhabi",8,296,11,26.90909090909
+2022,16,"Wankhede Stadium, Mumbai",21,309,11,28.090909090909
+2022,20,"Brabourne Stadium, Mumbai",16,322,12,26.833333333333
+2022,21,"Dr DY Patil Sports Academy, Mumbai",20,309,12,25.75
+2022,22,"Maharashtra Cricket Association Stadium, Pune",13,301,13,23.153846153846
+2023,15,"MA Chidambaram Stadium, Chepauk, Chennai",9,305,13,23.461538461538
+2023,16,"Wankhede Stadium, Mumbai",7,372,11,33.818181818181
+2023,17,"Narendra Modi Stadium, Ahmedabad",9,348,12,29.0
+2023,18,"Arun Jaitley Stadium, Delhi",7,317,12,26.416666666666
+2023,23,"Eden Gardens, Kolkata",7,346,12,28.833333333333
+2023,24,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",5,351,12,29.25
+2023,25,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",7,253,13,19.461538461538
+2023,26,"Rajiv Gandhi International Stadium, Uppal, Hyderabad",7,322,12,26.833333333333
+2023,27,"M Chinnaswamy Stadium, Bengaluru",7,363,12,30.25
+2023,29,"Sawai Mansingh Stadium, Jaipur",5,300,11,27.272727272727
+2024,15,"MA Chidambaram Stadium, Chepauk, Chennai",9,303,11,27.545454545454
+2024,16,"Wankhede Stadium, Mumbai",7,344,12,28.666666666666
+2024,17,"Narendra Modi Stadium, Ahmedabad",8,326,11,29.636363636363
+2024,18,"Arun Jaitley Stadium, Delhi",5,430,14,30.714285714285
+2024,23,"Eden Gardens, Kolkata",7,369,12,30.75
+2024,25,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",7,327,12,27.25
+2024,26,"Rajiv Gandhi International Stadium, Uppal, Hyderabad",6,380,9,42.222222222222
+2024,27,"M Chinnaswamy Stadium, Bengaluru",7,356,13,27.384615384615
+2024,29,"Sawai Mansingh Stadium, Jaipur",5,354,9,39.333333333333
+2024,31,"Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur",5,318,15,21.2
+2025,15,"MA Chidambaram Stadium, Chepauk, Chennai",6,298,13,22.923076923076
+2025,16,"Wankhede Stadium, Mumbai",7,319,12,26.583333333333
+2025,17,"Narendra Modi Stadium, Ahmedabad",9,381,12,31.75
+2025,18,"Arun Jaitley Stadium, Delhi",7,373,12,31.083333333333
+2025,23,"Eden Gardens, Kolkata",7,338,11,30.727272727272
+2025,25,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",8,364,10,36.4
+2025,26,"Rajiv Gandhi International Stadium, Uppal, Hyderabad",6,339,10,33.9
+2025,27,"M Chinnaswamy Stadium, Bengaluru",5,323,11,29.363636363636
+2025,29,"Sawai Mansingh Stadium, Jaipur",7,365,9,40.555555555555
+2025,31,"Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur",5,285,13,21.923076923076
