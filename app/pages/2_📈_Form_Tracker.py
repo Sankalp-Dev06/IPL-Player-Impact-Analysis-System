@@ -25,7 +25,7 @@ latest_form = (
 )
 
 teams = sorted(season_df["player_team"].unique())
-selected_team = st.selectbox("Filter by Team (Optional)", ["All Teams"] + teams)
+selected_team = st.selectbox("Filter by Team", ["All Teams"] + teams)
 
 if selected_team != "All Teams":
     season_df = season_df[season_df["player_team"] == selected_team]
@@ -40,12 +40,6 @@ st.subheader("Top 10 In-Form Players")
 top10 = latest_form.head(10)[
     ["player_name", "player_team", "rolling_5_match_impact"]
 ]
-
-top10 = top10.rename(columns={
-    "player_name": "Player",
-    "player_team": "Team",
-    "rolling_5_match_impact": "Rolling 5-Match Impact"
-})
 
 top10_display = top10.reset_index(drop=True)
 top10_display.index = top10_display.index + 1
