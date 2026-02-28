@@ -24,6 +24,12 @@ latest_form = (
     .tail(1)
 )
 
+teams = sorted(season_df["player_team"].unique())
+selected_team = st.selectbox("Filter by Team (Optional)", ["All Teams"] + teams)
+
+if selected_team != "All Teams":
+    season_df = season_df[season_df["player_team"] == selected_team]
+
 latest_form = latest_form.sort_values(
     "rolling_5_match_impact",
     ascending=False
@@ -32,8 +38,14 @@ latest_form = latest_form.sort_values(
 st.subheader("Top 10 In-Form Players")
 
 top10 = latest_form.head(10)[
-    ["player_name", "rolling_5_match_impact"]
+    ["player_name", "player_team", "rolling_5_match_impact"]
 ]
+
+top10 = top10.rename(columns={
+    "player_name": "Player",
+    "player_team": "Team",
+    "rolling_5_match_impact": "Rolling 5-Match Impact"
+})
 
 top10_display = top10.reset_index(drop=True)
 top10_display.index = top10_display.index + 1
@@ -53,6 +65,7 @@ fig = px.line(
     x="match_date",
     y="rolling_5_match_impact",
     color="player_name",
+    hover_data=["player_team", "opponent_team", "venue_name"],
     markers=True
 )
 

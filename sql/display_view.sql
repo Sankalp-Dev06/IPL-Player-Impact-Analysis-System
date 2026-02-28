@@ -74,10 +74,13 @@ SELECT
     ) AS rolling_5_match_impact,
 
     b.venue_name,
-    t.team_name AS opponent_team
+
+    pt.team_name AS player_team,
+    ot.team_name AS opponent_team
 
 FROM Base b
-LEFT JOIN Teams t ON b.opponent_team_id = t.team_id;
+LEFT JOIN Teams pt ON b.team_id = pt.team_id
+LEFT JOIN Teams ot ON b.opponent_team_id = ot.team_id;
 
 CREATE OR ALTER VIEW vw_Venue_Intelligence AS
 WITH Match_Aggregate AS (
