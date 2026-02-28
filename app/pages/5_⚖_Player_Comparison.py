@@ -37,12 +37,42 @@ if player1 != player2:
         st.metric("Avg Impact", round(stats1["avg_impact"].values[0], 2))
         st.metric("Consistency (CV)", round(stats1["coefficient_of_variation"].values[0], 2))
         st.metric("Role", stats1["player_role"].values[0])
+        avg_impact_1 = round(stats1["avg_impact"].values[0], 2)
+        if avg_impact_1 < 0:
+            impact_label = "Struggling Performer"
+        elif avg_impact_1 < 20:
+            impact_label = "Below Average"
+        elif avg_impact_1 < 40:
+            impact_label = "Moderate Contributor"
+        elif avg_impact_1 < 70:
+            impact_label = "Strong Performer"
+        elif avg_impact_1 < 120:
+            impact_label = "Match Influencer"
+        else:
+            impact_label = "Elite Dominator"
+
+        st.success(f"Performance Tier: **{impact_label}**")
 
     with col2:
         st.subheader(player2)
         st.metric("Avg Impact", round(stats2["avg_impact"].values[0], 2))
         st.metric("Consistency (CV)", round(stats2["coefficient_of_variation"].values[0], 2))
         st.metric("Role", stats2["player_role"].values[0])
+        avg_impact_2 = round(stats1["avg_impact"].values[0], 2)
+        if avg_impact_2 < 0:
+            impact_label = "Struggling Performer"
+        elif avg_impact_2 < 20:
+            impact_label = "Below Average"
+        elif avg_impact_2 < 40:
+            impact_label = "Moderate Contributor"
+        elif avg_impact_2 < 70:
+            impact_label = "Strong Performer"
+        elif avg_impact_2 < 120:
+            impact_label = "Match Influencer"
+        else:
+            impact_label = "Elite Dominator"
+
+        st.success(f"Performance Tier: **{impact_label}**")
         
 
 st.subheader("Impact Distribution Comparison")

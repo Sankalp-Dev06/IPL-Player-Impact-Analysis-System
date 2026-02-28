@@ -53,6 +53,23 @@ if not player_stats.empty:
 
     st.info(f"Performance Profile: **{stability_label}**")
 
+avg_impact = player_stats["avg_impact"].values[0]
+
+if avg_impact < 0:
+    impact_label = "Struggling Performer"
+elif avg_impact < 20:
+    impact_label = "Below Average"
+elif avg_impact < 40:
+    impact_label = "Moderate Contributor"
+elif avg_impact < 70:
+    impact_label = "Strong Performer"
+elif avg_impact < 120:
+    impact_label = "Match Influencer"
+else:
+    impact_label = "Elite Dominator"
+
+st.success(f"Performance Tier: **{impact_label}**")
+
 player_form = form_df[
     (form_df["player_name"] == selected_player) &
     (form_df["season"] == selected_season)
