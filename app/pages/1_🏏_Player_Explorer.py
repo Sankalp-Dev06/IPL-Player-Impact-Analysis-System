@@ -20,18 +20,27 @@ selected_season = st.selectbox("Select Season", seasons)
 season_df = overview_df[overview_df["season"] == selected_season]
 
 # Player selector
-players = sorted(season_df["player_name"].unique())
+teams = sorted(season_df["player_team"].unique())
+selected_team = st.selectbox("Filter by Team", ["All Teams"] + teams)
+
+filtered_df = season_df
+
+if selected_team != "All Teams":
+    filtered_df = season_df[season_df["player_team"] == selected_team]
+
+players = sorted(filtered_df["player_name"].unique())
 selected_player = st.selectbox("Select Player", players)
 
-player_stats = season_df[season_df["player_name"] == selected_player]
+player_stats = filtered_df[filtered_df["player_name"] == selected_player]
 
 if not player_stats.empty:
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     col1.metric("Average Impact", round(player_stats["avg_impact"].values[0], 2))
     col2.metric("Matches Played", int(player_stats["total_matches"].values[0]))
     col3.metric("Consistency (CV)", round(player_stats["coefficient_of_variation"].values[0], 2))
     col4.metric("Role", player_stats["player_role"].values[0])
+    col5.metric("Team", player_stats["player_team"].values[0])
 
     cv = player_stats["coefficient_of_variation"].values[0]
 

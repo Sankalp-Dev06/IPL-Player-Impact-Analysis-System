@@ -1,4 +1,31 @@
 CREATE OR ALTER VIEW vw_Player_Overview_Season AS
+
+WITH Team_Season_Count AS (
+    SELECT
+        p.player_id,
+        m.season,
+        p.team_id,
+        COUNT(*) AS match_count,
+
+        ROW_NUMBER() OVER (
+            PARTITION BY p.player_id, m.season
+            ORDER BY COUNT(*) DESC
+        ) AS rn
+
+    FROM Player_Match_Summary p
+    JOIN Matches m ON p.match_id = m.match_id
+    GROUP BY p.player_id, m.season, p.team_id
+),
+
+Primary_Team AS (
+    SELECT
+        player_id,
+        season,
+        team_id
+    FROM Team_Season_Count
+    WHERE rn = 1
+)
+
 SELECT
     p.player_id,
     pl.player_name,
@@ -23,18 +50,26 @@ SELECT
         WHEN AVG(p.legal_balls) >= 12 AND AVG(p.balls_faced) < 10 THEN 'Bowler'
         WHEN AVG(p.balls_faced) >= 10 AND AVG(p.legal_balls) >= 6 THEN 'All-Rounder'
         ELSE 'Utility'
-    END AS player_role
+    END AS player_role,
+
+    t.team_name AS player_team
 
 FROM Player_Match_Summary p
 JOIN Matches m ON p.match_id = m.match_id
 JOIN Players pl ON p.player_id = pl.player_id
+JOIN Primary_Team pt 
+    ON p.player_id = pt.player_id
+    AND m.season = pt.season
+JOIN Teams t 
+    ON pt.team_id = t.team_id
 
 GROUP BY
     p.player_id,
     pl.player_name,
-    m.season
+    m.season,
+    t.team_name
 
-HAVING COUNT(*) >= 8;  -- minimum matches per season
+HAVING COUNT(*) >= 8;
 
 CREATE OR ALTER VIEW vw_Player_Form_Display AS
 WITH Base AS (
@@ -74,13 +109,10 @@ SELECT
     ) AS rolling_5_match_impact,
 
     b.venue_name,
-
-    pt.team_name AS player_team,
-    ot.team_name AS opponent_team
+    t.team_name AS opponent_team
 
 FROM Base b
-LEFT JOIN Teams pt ON b.team_id = pt.team_id
-LEFT JOIN Teams ot ON b.opponent_team_id = ot.team_id;
+LEFT JOIN Teams t ON b.opponent_team_id = t.team_id;
 
 CREATE OR ALTER VIEW vw_Venue_Intelligence AS
 WITH Match_Aggregate AS (
